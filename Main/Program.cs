@@ -32,10 +32,5 @@ namespace Main
 
             app.Run();
         }
-
-
-
-
-        private void test;
     }
 }

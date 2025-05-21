@@ -1,22 +1,106 @@
-html {
-  font-size: 14px;
-}
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+h1 {
+    color: white;
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212429;
+}
+
+/* Прямоугольник */
+.center-box-home {
+    background-color: #1e2126;
+    color: white;
+    width: 1300px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+    .center-box-home p {
+        font-size: 21px;
+        text-align: center;
+    }
+
+ul {
+    color: white;
+    font-size: 21px;
+}
+
+.btn-outline-primary {
+    font-size: 21px;
+    height: 85px;
+    width: 200px;
+    margin-top: 45px;
+}
+
+.btn-outline-success {
+    font-size: 21px;
+    height: 45px;
+    width: 150px;
+}
+
+.btn-outline-info {
+    margin: 10px;
+}
+
+.btn-outline-light {
+    margin-left: 10px;
+}
+
+.sidebar .btn-center {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    background-color: #343a40; /* Темный фон */
+    color: white;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-y: auto; /* Скролл если контент выходит за границы */
+}
+
+.content {
+    margin-left: 280px; /* Отодвинем основной контент, чтобы он не перекрывал боковую панель */
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.btn-toggle::before {
+    content: '\f078'; /* Иконка стрелки вниз */
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-toggle.collapsed::before {
+    content: '\f054'; /* Иконка стрелки вправо */
+}
+
+
+.btn-center {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
