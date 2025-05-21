@@ -11,7 +11,7 @@ namespace Main
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            // Configure the HTTP request pipeline.sd
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -31,6 +31,8 @@ namespace Main
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+
+            void test() { return; }
         }
     }
 }
