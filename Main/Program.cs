@@ -34,10 +34,5 @@ namespace Main
 
             void test() { return; }
         }
-
-
-
-
-        private void test;
     }
 }
