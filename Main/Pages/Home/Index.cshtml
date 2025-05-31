@@ -1,0 +1,46 @@
+﻿@page
+@model Main.Pages.Home.IndexModel
+
+<h2>Home page</h2>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+
+    <title>Main</title
+</head>
+<body>
+
+    <div class="center-box-home">
+        <p>
+            Звіт про виконання лабораторних робіт з дисципліни "Основи програмування" <br>
+            Київський національний університет імені Тараса Шевченка. Факультет інформаційних технологій. <br>
+            Виконав: Курта Артем
+        </p>
+
+        <ul>
+            <li>Студент 1 курсу Факультету інформаційних технологій</li>
+            <li>Група ІПЗ-13 / підгрупа 6</li>
+        </ul>
+        <p>Викладачі:</p>
+        <ul>
+            <li>Петрівський В.Я.</li>
+            <li>Ковалюк Тетяна Володимирівна</li>
+        </ul>
+
+        <button type="button" onclick="location.href='/Space/Index'">
+            Go to work
+        </button>
+
+    </div>
+
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
