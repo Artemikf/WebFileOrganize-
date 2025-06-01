@@ -1,46 +1,152 @@
 ﻿@page
 @model Main.Pages.Home.IndexModel
 
-<h2>Home page</h2>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/style.css" />
 
-    <title>Main</title
+    <!-- ✅ Підключаємо шрифт Asset -->
+    <link href="https://fonts.googleapis.com/css2?family=Asset&display=swap" rel="stylesheet">
+
+    <title>Files Organizer</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-box {
+            background-color: #360940; /* 🔄 новий фіолетовий */
+            width: 90%;
+            max-width: 1000px;
+            height: 500px;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* ✅ тінь */
+        }
+
+        .text-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .text-section h3 {
+                margin-bottom: 20px;
+            }
+
+        .names {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .go-button {
+            background-color: #5e00b8; /* НЕ змінюємо */
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            width: fit-content;
+        }
+
+            .go-button:hover {
+                background-color: #7c29e6;
+            }
+
+        .black-box {
+            background-color: #191714; /* 🔄 новий чорний */
+            color: white;
+            padding: 40px 30px;
+            width: 50%;
+            height: 400px; /* ✅ фіксована висота */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: bold;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* ✅ тінь */
+        }
+
+            .black-box h1 {
+                font-family: 'Asset', cursive; /* ✅ новий шрифт */
+                font-size: 42px;
+                margin: 0 0 20px 0;
+                line-height: 1.2;
+            }
+
+            .black-box ol {
+                padding-left: 20px;
+            }
+
+        media (max-width: 800px) {
+            .main-box
+
+        {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .black-box {
+            width: 100%;
+            height: auto;
+            border-radius: 0 0 10px 10px;
+            margin-left: 0;
+        }
+
+        }
+    </style>
 </head>
 <body>
 
-    <div class="center-box-home">
-        <p>
-            Звіт про виконання лабораторних робіт з дисципліни "Основи програмування" <br>
-            Київський національний університет імені Тараса Шевченка. Факультет інформаційних технологій. <br>
-            Виконав: Курта Артем
-        </p>
+    <div class="main-box">
+        <div class="text-section">
+            <h3>Web-technology project<br>IPZ-13 (subgroup 06)</h3>
+            <div class="names">
+                <p>Kurta Artem<br>Khudoba Valeria</p>
+            </div>
+            <button class="go-button" type="button" onclick="location.href='/Space/Index'">
+                Go to work
+            </button>
+        </div>
 
-        <ul>
-            <li>Студент 1 курсу Факультету інформаційних технологій</li>
-            <li>Група ІПЗ-13 / підгрупа 6</li>
-        </ul>
-        <p>Викладачі:</p>
-        <ul>
-            <li>Петрівський В.Я.</li>
-            <li>Ковалюк Тетяна Володимирівна</li>
-        </ul>
-
-        <button type="button" onclick="location.href='/Space/Index'">
-            Go to work
-        </button>
-
+        <div class="black-box">
+            <h1>files<br>organizer</h1>
+            <div>
+                search for files in the specified folder with additional features:
+                <ol>
+                    <li>cleaner;</li>
+                    <li>renamer;</li>
+                    <li>archiver;</li>
+                    <li>encoder/decoder;</li>
+                    <li>grouper.</li>
+                </ol>
+            </div>
+        </div>
     </div>
 
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
