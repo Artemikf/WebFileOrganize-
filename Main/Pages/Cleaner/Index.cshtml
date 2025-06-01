@@ -8,23 +8,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cleaner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Один вариант подключения Bootstrap: локально -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
-
-    <!-- Локальный стиль -->
     <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Иконки -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <title>Space</title>
+    <style>
+        body {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .black-box {
+            background-color: #1c1c1c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+            .checkbox-group label {
+                width: 100px;
+            }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 15px;
+            resize: vertical;
+        }
+    </style>
 </head>
 <body>
-
     <div class="sidebar">
         <a href="../home/index.html" class="d-flex align-items-center pb-3 mb-3 link-light text-decoration-none border-bottom">
             <svg class="bi pe-none me-2" width="30" height="24">
@@ -34,22 +88,15 @@
         </a>
 
         <ul class="list-unstyled ps-0">
-            <!-- Список лабораторных -->
             <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded border-0 text-white collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#home-collapse" aria-expanded="false">
+                <button class="btn btn-toggle align-items-center rounded border-0 text-white collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse">
                     Список
                 </button>
                 <div class="collapse" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li>
-                            <span class="text-white d-inline-flex text-decoration-none rounded bg-secondary px-2 py-1">
-                                Cleaner
-                            </span>
-                        </li>
+                        <li><span class="text-white d-inline-flex text-decoration-none rounded bg-secondary px-2 py-1">Cleaner</span></li>
                         <li><a href="../Renamer/Index" class="link-light d-inline-flex text-decoration-none rounded">Renamer</a></li>
                         <li><a href="../Archiver/Index" class="link-light d-inline-flex text-decoration-none rounded">Archiver</a></li>
-
                         <li><a href="../EncoderDecoder/Index" class="link-light d-inline-flex text-decoration-none rounded">Encoder / Decoder</a></li>
                         <li><a href="../Groupper/Index" class="link-light d-inline-flex text-decoration-none rounded">Groupper</a></li>
                     </ul>
@@ -58,9 +105,8 @@
 
             <li class="border-top my-3"></li>
 
-            <!-- Список аккаунтов -->
             <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded border-0 text-white collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                <button class="btn btn-toggle align-items-center rounded border-0 text-white collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse">
                     Аккаунт
                 </button>
                 <div class="collapse" id="account-collapse">
@@ -72,19 +118,80 @@
             </li>
         </ul>
 
-
-        <button type="button" onclick="location.href='/Home/Index'">
-            Go to main
-        </button>
+        <button type="button" onclick="location.href='/Home/Index'" class="btn btn-light mt-3">Go to main</button>
     </div>
 
     <div class="content">
-        <!-- Основной контент -->
-        <h1>test cleaner</h1>
+        <div class="main-wrapper">
+            <div class="black-box">
+                <div class="checkbox-group">
+                    <label><input type="checkbox"> .jpg</label>
+                    <label><input type="checkbox"> .jpeg</label>
+                    <label><input type="checkbox"> .png</label>
+                    <label><input type="checkbox"> .gif</label>
+                    <label><input type="checkbox"> .doc</label>
+                    <label><input type="checkbox"> .docx</label>
+                    <label><input type="checkbox"> .xls</label>
+                    <label><input type="checkbox"> .xlsx</label>
+                    <label><input type="checkbox"> .ppt</label>
+                    <label><input type="checkbox"> .pptx</label>
+                    <label><input type="checkbox"> .pdf</label>
+                    <label><input type="checkbox"> .txt</label>
+                    <label><input type="checkbox"> .mp3</label>
+                    <label><input type="checkbox"> .mp4</label>
+                    <label><input type="checkbox"> .avi</label>
+                    <label><input type="checkbox"> .rar</label>
+                    <label><input type="checkbox"> .zip</label>
+                    <label><input type="checkbox"> .iso</label>
+                    <label><input type="checkbox"> .exe</label>
+                    <label><input type="checkbox"> .cs</label>
+                    <label><input type="checkbox"> .cpp</label>
+                    <label><input type="checkbox"> .torrent</label>
+                    <label><input type="checkbox"> .html</label>
+                    <label><input type="checkbox"> .log</label>
+                    <label><input type="checkbox"> .json</label>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary" onclick="clearList()">Clear List</button>
+                    <button class="btn btn-primary" onclick="saveSelection()">Save</button>
+                    <button class="btn btn-success" onclick="chooseAll()">Choose All</button>
+                </div>
+
+                <textarea id="fileTextArea" placeholder="Selected files will appear here..."></textarea>
+
+                <button class="btn btn-danger w-100" onclick="clearText()">Clear</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Подключение Bootstrap JS для работы Collapse -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function clearList() {
+            document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach(cb => cb.checked = false);
+        }
+
+        function chooseAll() {
+            document.querySelectorAll('.checkbox-group input[type="checkbox"]').forEach(cb => cb.checked = true);
+        }
+
+        function saveSelection() {
+            const selected = Array.from(document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked'))
+                .map(cb => cb.parentElement.textContent.trim());
+            document.getElementById('fileTextArea').value = selected.join('\n');
+        }
+
+        function clearText() {
+            document.getElementById('fileTextArea').value = '';
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</
+</html>
+
+
+
+
+
+
+
