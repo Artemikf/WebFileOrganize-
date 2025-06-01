@@ -7,7 +7,7 @@ namespace Main
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddRazorPages();
 
             var app = builder.Build();
 
@@ -25,14 +25,23 @@ namespace Main
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            // –едиректим главную страницу на Razor Page
+            app.MapGet("/", context =>
+            {
+                context.Response.Redirect("/Home");
+                return Task.CompletedTask;
+            });
+
+
+            //app.MapControllerRoute(
+            //    name: "default",
+            //    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.MapRazorPages(); // <-- ќЅя«ј“≈Ћ№Ќќ
 
             app.Run();
-
-            void test() { return; }
         }
     }
 }
